@@ -1,47 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+# app.py
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hirexus - AI Resume Analyzer</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-</head>
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">Hirexus</div>
-      <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <section class="hero">
-      <h1>Let AI Supercharge Your Resume</h1>
-      <p>Upload your resume and get smart feedback to land your dream job.</p>
-    </section>
-  </header>
+app = Flask(__name__)
+CORS(app)
 
-  <main>
-    <section class="analyzer">
-      <h2>Analyze Your Resume</h2>
-      <form id="resumeForm">
-        <textarea id="resumeText" placeholder="Paste your resume text here..."></textarea>
-        <button type="submit">Analyze Resume</button>
-      </form>
-      <div id="loadingSpinner" style="display:none">Analyzing...</div>
-      <div id="analysisOutput"></div>
-    </section>
-  </main>
+@app.route("/analyze", methods=["POST"])
+def analyze_resume():
+    data = request.get_json()
+    resume_text = data.get("text", "")
 
-  <footer>
-    <p>&copy; 2025 Hirexus. All rights reserved.</p>
-  </footer>
+    if not resume_text:
+        return jsonify({"error": "No resume text provided"}), 400
 
-  <script src="script.js"></script>
-</body>
+    # Placeholder logic for resume analysis
+    response = {
+        "ats_score": 78,
+        "strengths": ["Strong action verbs", "Clear structure", "Relevant skills"],
+        "weaknesses": ["Too many buzzwords", "Lacks quantifiable achievements"],
+        "recommendations": [
+            "Use numbers to quantify impact",
+            "Tailor to job descriptions",
+            "Add a professional summary"
+        ],
+        "suggested_templates": ["Modern Clean", "ATS Optimized", "Minimalist"],
+        "job_matches": [
+            {"title": "Data Analyst", "company": "Google", "location": "New York, NY"},
+            {"title": "Junior Developer", "company": "Meta", "location": "San Francisco, CA"},
+            {"title": "AI Research Intern", "company": "OpenAI", "location": "Remote"}
+        ]
+    }
 
-</html>
+    return jsonify(response)
+
+if __name__ == "__main__":
+    app.run(debug=True)
