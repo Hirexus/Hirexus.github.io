@@ -1,15 +1,22 @@
 // script.js
 
+// Initialize UI after DOM loads
 document.addEventListener("DOMContentLoaded", function () {
-  const uploadButton = document.querySelector("button");
+  const form = document.querySelector("#resumeForm");
+  const outputContainer = document.querySelector("#analysisOutput");
+  const loadingSpinner = document.querySelector("#loadingSpinner");
 
-  uploadButton.addEventListener("click", async () => {
-    const resumeText = document.getElementById("resumeText").value;
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const resumeText = document.getElementById("resumeText").value.trim();
 
-    if (!resumeText.trim()) {
-      alert("Please paste your resume content.");
+    if (!resumeText) {
+      alert("Please paste or upload your resume text.");
       return;
     }
+
+    outputContainer.innerHTML = "";
+    loadingSpinner.style.display = "block";
 
     try {
       const response = await fetch("http://127.0.0.1:5000/analyze", {
@@ -21,47 +28,41 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       if (!response.ok) {
-        throw new Error("Error analyzing resume");
+        throw new Error("Failed to analyze resume.");
       }
 
-      const data = await response.json();
-      displayAnalysis(data);
+      const analysis = await response.json();
+      renderAnalysis(analysis);
     } catch (error) {
-      console.error("Analysis failed:", error);
-      alert("Something went wrong while analyzing your resume.");
+      console.error("Error:", error);
+      outputContainer.innerHTML = `<div class="error">An error occurred while analyzing your resume. Please try again later.</div>`;
+    } finally {
+      loadingSpinner.style.display = "none";
     }
   });
 
-  function displayAnalysis(data) {
-    let output = `<h4>Analysis Result</h4>`;
-    output += `<p><strong>ATS Score:</strong> ${data.ats_score}%</p>`;
+  function renderAnalysis(data) {
+    const scoreHTML = `<div class="score-box"><strong>ATS Score:</strong> ${data.ats_score}%</div>`;
 
-    output += `<h5>Strengths:</h5><ul>`;
-    data.strengths.forEach(item => output += `<li>${item}</li>`);
-    output += `</ul>`;
+    const listSection = (title, items) => `
+      <div class="section">
+        <h4>${title}</h4>
+        <ul>${items.map(item => `<li>${item}</li>`).join("")}</ul>
+      </div>
+    `;
 
-    output += `<h5>Weaknesses:</h5><ul>`;
-    data.weaknesses.forEach(item => output += `<li>${item}</li>`);
-    output += `</ul>`;
+    const jobList = data.job_matches.map(job => `<li>${job.title} at ${job.company} — <em>${job.location}</em></li>`);
 
-    output += `<h5>Recommendations:</h5><ul>`;
-    data.recommendations.forEach(item => output += `<li>${item}</li>`);
-    output += `</ul>`;
-
-    output += `<h5>Suggested Templates:</h5><ul>`;
-    data.suggested_templates.forEach(template => output += `<li>${template}</li>`);
-    output += `</ul>`;
-
-    output += `<h5>Job Matches:</h5><ul>`;
-    data.job_matches.forEach(job => {
-      output += `<li>${job.title} at ${job.company} (${job.location})</li>`;
-    });
-    output += `</ul>`;
-
-    const resultBox = document.createElement("div");
-    resultBox.classList.add("result-box");
-    resultBox.innerHTML = output;
-
-    document.querySelector(".upload-section").appendChild(resultBox);
+    outputContainer.innerHTML = `
+      ${scoreHTML}
+      ${listSection("Strengths", data.strengths)}
+      ${listSection("Weaknesses", data.weaknesses)}
+      ${listSection("Recommendations", data.recommendations)}
+      ${listSection("Suggested Templates", data.suggested_templates)}
+      <div class="section">
+        <h4>Recommended Jobs</h4>
+        <ul>${jobList.join("")}</ul>
+      </div>
+    `;
   }
 });
