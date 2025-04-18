@@ -1,68 +1,85 @@
 // script.js
 
-// Initialize UI after DOM loads
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("#resumeForm");
-  const outputContainer = document.querySelector("#analysisOutput");
-  const loadingSpinner = document.querySelector("#loadingSpinner");
+document.getElementById("resumeForm").addEventListener("submit", function(event) {
+    event.preventDefault();  // Prevent the form from submitting the traditional way
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const resumeText = document.getElementById("resumeText").value.trim();
+    // Show loading spinner
+    document.getElementById("loadingSpinner").style.display = "block";
 
-    if (!resumeText) {
-      alert("Please paste or upload your resume text.");
-      return;
-    }
+    // Get the resume text from the textarea
+    const resumeText = document.getElementById("resumeText").value;
 
-    outputContainer.innerHTML = "";
-    loadingSpinner.style.display = "block";
+    // Prepare the data to send to the backend
+    const data = {
+        text: resumeText
+    };
 
-    try {
-      const response = await fetch("http://127.0.0.1:5000/analyze", {
+    // Send the POST request to the backend
+    fetch("http://localhost:5000/analyze", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+            "Content-Type": "application/json"
         },
-        body: JSON.stringify({ text: resumeText })
-      });
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Hide loading spinner
+        document.getElementById("loadingSpinner").style.display = "none";
 
-      if (!response.ok) {
-        throw new Error("Failed to analyze resume.");
-      }
-
-      const analysis = await response.json();
-      renderAnalysis(analysis);
-    } catch (error) {
-      console.error("Error:", error);
-      outputContainer.innerHTML = `<div class="error">An error occurred while analyzing your resume. Please try again later.</div>`;
-    } finally {
-      loadingSpinner.style.display = "none";
-    }
-  });
-
-  function renderAnalysis(data) {
-    const scoreHTML = `<div class="score-box"><strong>ATS Score:</strong> ${data.ats_score}%</div>`;
-
-    const listSection = (title, items) => `
-      <div class="section">
-        <h4>${title}</h4>
-        <ul>${items.map(item => `<li>${item}</li>`).join("")}</ul>
-      </div>
-    `;
-
-    const jobList = data.job_matches.map(job => `<li>${job.title} at ${job.company} — <em>${job.location}</em></li>`);
-
-    outputContainer.innerHTML = `
-      ${scoreHTML}
-      ${listSection("Strengths", data.strengths)}
-      ${listSection("Weaknesses", data.weaknesses)}
-      ${listSection("Recommendations", data.recommendations)}
-      ${listSection("Suggested Templates", data.suggested_templates)}
-      <div class="section">
-        <h4>Recommended Jobs</h4>
-        <ul>${jobList.join("")}</ul>
-      </div>
-    `;
-  }
+        // Display the analysis results
+        displayAnalysisResults(data);
+    })
+    .catch(error => {
+        // Handle errors
+        console.error("Error:", error);
+        document.getElementById("loadingSpinner").style.display = "none";
+        alert("Something went wrong. Please try again.");
+    });
 });
+
+// Function to display analysis results
+function displayAnalysisResults(data) {
+    const analysisOutput = document.getElementById("analysisOutput");
+    
+    // Clear previous output
+    analysisOutput.innerHTML = "";
+
+    if (data.error) {
+        analysisOutput.innerHTML = `<p>Error: ${data.error}</p>`;
+        return;
+    }
+
+    // Create sections to display the results
+    analysisOutput.innerHTML += `<h3>ATS Score: ${data.ats_score}</h3>`;
+    
+    analysisOutput.innerHTML += "<h4>Strengths:</h4><ul>";
+    data.strengths.forEach(strength => {
+        analysisOutput.innerHTML += `<li>${strength}</li>`;
+    });
+    analysisOutput.innerHTML += "</ul>";
+
+    analysisOutput.innerHTML += "<h4>Weaknesses:</h4><ul>";
+    data.weaknesses.forEach(weakness => {
+        analysisOutput.innerHTML += `<li>${weakness}</li>`;
+    });
+    analysisOutput.innerHTML += "</ul>";
+
+    analysisOutput.innerHTML += "<h4>Recommendations:</h4><ul>";
+    data.recommendations.forEach(recommendation => {
+        analysisOutput.innerHTML += `<li>${recommendation}</li>`;
+    });
+    analysisOutput.innerHTML += "</ul>";
+
+    analysisOutput.innerHTML += "<h4>Suggested Templates:</h4><ul>";
+    data.suggested_templates.forEach(template => {
+        analysisOutput.innerHTML += `<li>${template}</li>`;
+    });
+    analysisOutput.innerHTML += "</ul>";
+
+    analysisOutput.innerHTML += "<h4>Job Matches:</h4><ul>";
+    data.job_matches.forEach(job => {
+        analysisOutput.innerHTML += `<li>${job.title} at ${job.company} in ${job.location}</li>`;
+    });
+    analysisOutput.innerHTML += "</ul>";
+}
