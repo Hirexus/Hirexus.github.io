@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hirexus – AI Resume Optimizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1>Hirexus</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#templates">Templates</a></li>
+          <li><a href="#upload">Upload</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Your Personal AI Resume Consultant</h2>
+    <p>Get actionable feedback, optimized templates, and job matches instantly.</p>
+    <a href="#upload" class="cta-button">Get Started</a>
+  </section>
+
+  <section id="features" class="features-section">
+    <h3>Why Hirexus?</h3>
+    <div class="features-grid">
+      <div class="feature">
+        <h4>Smart Analysis</h4>
+        <p>Understand your resume's strengths and weaknesses with advanced NLP.</p>
+      </div>
+      <div class="feature">
+        <h4>ATS Optimization</h4>
+        <p>Increase your chances of passing applicant tracking systems.</p>
+      </div>
+      <div class="feature">
+        <h4>Professional Templates</h4>
+        <p>Choose from modern, elegant templates tailored for every industry.</p>
+      </div>
+      <div class="feature">
+        <h4>Job Matching</h4>
+        <p>Discover personalized job roles you can apply for based on your resume content.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="upload" class="upload-section">
+    <h3>Upload or Paste Your Resume</h3>
+    <div class="upload-box">
+      <input type="file" id="resumeUpload" accept=".pdf,.doc,.docx" />
+      <p>or</p>
+      <textarea id="resumeText" placeholder="Paste your resume text here..."></textarea>
+      <button onclick="analyzeResume()">Analyze My Resume</button>
+    </div>
+  </section>
+
+  <section id="templates" class="templates-section">
+    <h3>Explore Resume Templates</h3>
+    <div class="template-grid">
+      <div class="template-card">Modern</div>
+      <div class="template-card">Elegant</div>
+      <div class="template-card">Minimal</div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>&copy; 2025 Hirexus All rights reserved.</p>
+    <p><a href="mailto:mejlaouibassam@gmail.com">mejlaouibassam@gmail.com</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
