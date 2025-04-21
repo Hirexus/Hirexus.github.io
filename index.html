@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hirexus Pro | Enterprise-Grade Resume Optimization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        :root {
+            --primary: #101828;
+            --secondary: #3B82F6;
+            --accent: #8B5CF6;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-[#f8fafc] text-[var(--primary)];
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .feature-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .analysis-result {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full glass-panel z-50 shadow-sm">
+        <div class="max-w-8xl mx-auto px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <svg class="w-10 h-10" viewBox="0 0 48 48" fill="none">
+                    <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" fill="#3B82F6"/>
+                    <path d="M32 18L22 30L16 24" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#features" class="font-medium hover:text-[var(--secondary)] transition">Features</a>
+                    <a href="#security" class="font-medium hover:text-[var(--secondary)] transition">Security</a>
+                    <a href="#testimonials" class="font-medium hover:text-[var(--secondary)] transition">Success Stories</a>
+                </div>
+            </div>
+            <a href="mailto:mejlaouibassam@gmail.com" class="bg-[var(--secondary)] text-white px-6 py-2.5 rounded-lg hover:bg-[#2563eb] transition">
+                Request Demo
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+                AI-Driven Resume Excellence<br>
+                <span class="bg-gradient-to-r from-[var(--secondary)] to-[var(--accent)] bg-clip-text text-transparent">6 Core Features</span>
+            </h1>
+            
+            <!-- Interactive Upload -->
+            <div class="glass-panel max-w-2xl mx-auto p-8 rounded-2xl shadow-xl">
+                <div id="uploadContainer" class="border-2 border-dashed border-gray-200 rounded-xl p-12 text-center cursor-pointer transition-all hover:border-[var(--secondary)]"
+                    onclick="document.getElementById('resumeInput').click()">
+                    <i class="fas fa-file-upload text-6xl text-[var(--secondary)] mb-6 animate-bounce"></i>
+                    <p class="text-xl font-medium">Upload Your Resume</p>
+                    <p class="text-gray-600 mt-2">PDF, DOCX, or TXT - 256-bit encrypted analysis</p>
+                    <input type="file" id="resumeInput" class="hidden" accept=".pdf,.docx,.txt">
+                </div>
+                <div id="uploadSuccess" class="hidden mt-6 text-green-600">
+                    <i class="fas fa-check-circle mr-2"></i>Analysis in progress...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-3xl font-bold text-center mb-16">Enterprise-Grade Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card glass-panel p-8 rounded-xl">
+                    <div class="w-12 h-12 bg-[var(--secondary)]/10 rounded-lg mb-6 flex items-center justify-center">
+                        <i class="fas fa-brain text-[var(--secondary)] text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">AI-Powered Analysis</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button class="p-3 text-left hover:bg-gray-50 rounded-lg">ATS Optimization</button>
+                        <button class="p-3 text-left hover:bg-gray-50 rounded-lg">Keyword Tracking</button>
+                        <button class="p-3 text-left hover:bg-gray-50 rounded-lg">Skill Gap Analysis</button>
+                        <button class="p-3 text-left hover:bg-gray-50 rounded-lg">Format Validation</button>
+                        <button class="p-3 text-left hover:bg-gray-50 rounded-lg">Achievement Scoring</button>
+                        <button class="p-3 text-left hover:bg-gray-50 rounded-lg">Industry Benchmarking</button>
+                    </div>
+                </div>
+
+                <!-- Add 5 more feature cards with 6 buttons each -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Analysis Results -->
+    <section class="py-20 bg-[#f8fafc]">
+        <div class="max-w-7xl mx-auto px-8">
+            <div id="analysisResults" class="analysis-result glass-panel rounded-2xl shadow-xl p-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- ATS Score -->
+                    <div class="bg-white p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-4">ATS Compatibility</h3>
+                        <div class="radial-progress text-[var(--secondary)]" style="--value:82; --size:12rem;">82%</div>
+                        <div class="mt-6 space-y-3">
+                            <button class="w-full p-3 text-left hover:bg-gray-50 rounded-lg">View Detailed Report</button>
+                            <button class="w-full p-3 text-left hover:bg-gray-50 rounded-lg">Compare to Industry</button>
+                            <button class="w-full p-3 text-left hover:bg-gray-50 rounded-lg">Improvement Checklist</button>
+                        </div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-xl">
+                            <h3 class="text-xl font-semibold mb-4">AI Recommendations</h3>
+                            <div class="space-y-4">
+                                <button class="w-full p-3 text-left hover:bg-gray-50 rounded-lg">Add 5 Industry Keywords</button>
+                                <button class="w-full p-3 text-left hover:bg-gray-50 rounded-lg">Quantify 3 Achievements</button>
+                                <button class="w-full p-3 text-left hover:bg-gray-50 rounded-lg">Optimize Section Order</button>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl">
+                            <h3 class="text-xl font-semibold mb-4">Quick Actions</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <button class="p-3 hover:bg-gray-50 rounded-lg">Download PDF Report</button>
+                                <button class="p-3 hover:bg-gray-50 rounded-lg">Share with Team</button>
+                                <button class="p-3 hover:bg-gray-50 rounded-lg">Save as Template</button>
+                                <a href="mailto:mejlaouibassam@gmail.com" class="p-3 hover:bg-gray-50 rounded-lg">Request Consultation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-3xl font-bold text-center mb-16">Security Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card glass-panel p-8 rounded-xl">
+                    <div class="w-12 h-12 bg-[var(--secondary)]/10 rounded-lg mb-6 flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-[var(--secondary)]"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Data Protection</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button class="p-3 text-left hover:bg-gray-50 rounded-lg">AES-256 Encryption</button>
+                        <button class="p-3 text-left hover:bg-gray-50 rounded-lg">GDPR Compliance</button>
+                        <button class="p-3 text-left hover:bg-gray-50 rounded-lg">SOC 2 Certified</button>
+                        <button class="p-3 text-left hover:bg-gray-50 rounded-lg">Data Anonymization</button>
+                        <button class="p-3 text-left hover:bg-gray-50 rounded-lg">Auto Data Purge</button>
+                        <button class="p-3 text-left hover:bg-gray-50 rounded-lg">2FA Protection</button>
+                    </div>
+                </div>
+                <!-- Add 2 more security cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-white">
+        <div class="max-w-4xl mx-auto px-8 text-center">
+            <h2 class="text-3xl font-bold mb-8">Start Your Career Transformation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <button onclick="document.getElementById('resumeInput').click()" 
+                    class="glass-panel p-8 rounded-xl hover:bg-white/10 transition">
+                    <i class="fas fa-upload text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Upload Resume</h3>
+                    <p class="text-gray-200">Get instant AI analysis</p>
+                </button>
+                <a href="mailto:mejlaouibassam@gmail.com" 
+                    class="glass-panel p-8 rounded-xl hover:bg-white/10 transition">
+                    <i class="fas fa-calendar-check text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Book Consultation</h3>
+                    <p class="text-gray-200">Personalized career strategy</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // File Upload Handling
+        document.getElementById('resumeInput').addEventListener('change', function(e) {
+            if(this.files.length > 0) {
+                document.getElementById('uploadSuccess').classList.remove('hidden');
+                document.getElementById('analysisResults').style.maxHeight = 
+                    document.getElementById('analysisResults').scrollHeight + 'px';
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
