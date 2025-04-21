@@ -16,7 +16,6 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            @apply bg-gray-50 text-[var(--primary)] antialiased;
         }
         .glass-panel {
             background: rgba(255, 255, 255, 0.98);
@@ -30,54 +29,85 @@
             background-clip: text;
             color: transparent;
         }
-        .feature-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
     </style>
 </head>
-<body>
-    <!-- Enhanced Navigation -->
-    <nav class="fixed w-full glass-panel z-50 border-b border-gray-200/80">
-        <div class="max-w-8xl mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-10">
-                    <svg class="w-10 h-10 text-[var(--secondary)]" viewBox="0 0 48 48" fill="none">
-                        <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" fill="currentColor"/>
-                        <path d="M32 18L22 30L16 24" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                    </svg>
-                    <div class="hidden lg:flex space-x-8">
-                        <a href="#features" class="font-medium text-gray-600 hover:text-[var(--secondary)] transition-colors">Solutions</a>
-                        <a href="#analysis" class="font-medium text-gray-600 hover:text-[var(--secondary)] transition-colors">Analysis</a>
-                        <a href="#enterprise" class="font-medium text-gray-600 hover:text-[var(--secondary)] transition-colors">Enterprise</a>
-                        <a href="#templates" class="font-medium text-gray-600 hover:text-[var(--secondary)] transition-colors">Templates</a>
-                        <a href="#dashboard" class="font-medium text-gray-600 hover:text-[var(--secondary)] transition-colors">Dashboard</a>
-                        <a href="#roadmap" class="font-medium text-gray-600 hover:text-[var(--secondary)] transition-colors">Roadmap</a>
-                    </div>
+<body class="bg-gray-50 text-[var(--primary)] antialiased">
+
+<!-- Navbar -->
+<nav class="fixed w-full glass-panel z-50 border-b border-gray-200/80">
+    <div class="max-w-8xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-10">
+                <svg class="w-10 h-10 text-[var(--secondary)]" viewBox="0 0 48 48" fill="none">
+                    <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" fill="currentColor"/>
+                    <path d="M32 18L22 30L16 24" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#features" class="font-medium text-gray-600 hover:text-[var(--secondary)] transition-colors">Solutions</a>
+                    <a href="#analysis" class="font-medium text-gray-600 hover:text-[var(--secondary)] transition-colors">Analysis</a>
+                    <a href="#enterprise" class="font-medium text-gray-600 hover:text-[var(--secondary)] transition-colors">Enterprise</a>
                 </div>
-                <a href="mailto:mejlaouibassam@gmail.com" class="button-primary">
-                    Schedule Demo
-                </a>
+            </div>
+            <a href="mailto:mejlaouibassam@gmail.com" class="bg-[var(--secondary)] text-white px-5 py-2 rounded-lg font-semibold shadow hover:bg-blue-700 transition">
+                Schedule Demo
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="pt-40 pb-32">
+    <div class="max-w-7xl mx-auto px-8 text-center">
+        <div class="mb-8" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                Enterprise-Grade AI Platform
+            </span>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tighter" data-aos="fade-up">
+            Next-Generation<br>
+            <span class="gradient-text">Resume Optimization</span>
+        </h1>
+
+        <!-- Upload Area -->
+        <div class="max-w-2xl mx-auto mt-12" data-aos="fade-up">
+            <div onclick="document.getElementById('resumeInput').click()" class="border-2 border-dashed border-gray-300 rounded-2xl p-12 text-center cursor-pointer transition-all hover:border-[var(--secondary)] hover:bg-white">
+                <i class="fas fa-cloud-upload-alt text-4xl text-[var(--secondary)]"></i>
+                <div class="mt-6">
+                    <p class="text-xl font-semibold text-gray-900 mb-2">Secure Document Analysis</p>
+                    <p class="text-gray-600 text-sm">Supported formats: PDF, DOCX, TXT</p>
+                </div>
+                <input type="file" id="resumeInput" class="hidden" accept=".pdf,.docx,.txt">
+            </div>
+            <div id="uploadStatus" class="hidden mt-6 text-gray-700 text-center">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span class="ml-2">AI Analysis in Progress</span>
             </div>
         </div>
-    </nav>
 
-    <!-- Hero, Features, Templates, Dashboard, Roadmap Sections included (unchanged) -->
+        <!-- Buttons Section -->
+        <div class="flex justify-center space-x-4 mt-12" data-aos="fade-up">
+            <a href="mailto:mejlaouibassam@gmail.com" class="bg-white text-[var(--primary)] font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-gray-100 transition">
+                Schedule Demo
+            </a>
+            <a href="#features" class="bg-[var(--secondary)] text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-blue-600 transition">
+                Explore Features
+            </a>
+        </div>
+    </div>
+</section>
 
-    <!-- Add the script references at the end of the body -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-            duration: 1000,
-            easing: 'ease-in-out'
-        });
+<!-- Footer -->
+<footer class="py-12 bg-gray-100 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8 text-center text-gray-600">
+        <p>&copy; 2025 Hirexus Pro. All rights reserved.</p>
+    </div>
+</footer>
 
-        document.getElementById('resumeInput')?.addEventListener('change', function () {
-            const status = document.getElementById('uploadStatus');
-            if (status) {
-                status.classList.remove('hidden');
-            }
-        });
-    </script>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
 </body>
 </html>
