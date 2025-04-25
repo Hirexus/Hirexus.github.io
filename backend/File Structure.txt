@@ -1,0 +1,29 @@
+backend/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── config.py
+│   ├── models.py
+│   ├── schemas.py
+│   ├── database.py
+│   ├── utils/
+│   │   ├── file_handlers.py
+│   │   └── nlp_processor.py
+│   ├── services/
+│   │   ├── resume_parser.py
+│   │   ├── ai_analyzer.py
+│   │   ├── ats_checker.py
+│   │   └── auth.py
+│   ├── api/
+│   │   ├── endpoints/
+│   │   │   ├── analysis.py
+│   │   │   ├── auth.py
+│   │   │   └── users.py
+│   │   └── api_v1.py
+│   └── tests/
+│       ├── conftest.py
+│       ├── test_parser.py
+│       └── test_analysis.py
+├── requirements.txt
+├── Dockerfile
+└── docker-compose.yml
