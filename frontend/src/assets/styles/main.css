@@ -1,0 +1,28 @@
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --text-color: #1f2937;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-header {
+  background: var(--primary-color);
+  padding: 1rem;
+  color: white;
+}
+
+.dropzone {
+  border: 2px dashed #ccc;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropzone.active {
+  border-color: var(--primary-color);
+}
