@@ -1,0 +1,83 @@
+resume-analyzer/
+├── backend/
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── routes/
+│   │   │   ├── analysis_routes.py
+│   │   │   ├── auth_routes.py
+│   │   │   └── user_routes.py
+│   │   ├── services/
+│   │   │   ├── resume_parser.py
+│   │   │   ├── ai_analysis.py
+│   │   │   └── ats_checker.py
+│   │   ├── models/
+│   │   │   ├── user_model.py
+│   │   │   └── analysis_model.py
+│   │   └── utils/
+│   │       ├── file_handlers.py
+│   │       └── nlp_utils.py
+│   ├── config.py
+│   ├── requirements.txt
+│   └── main.py
+
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── AnalysisDashboard/
+│   │   │   │   ├── SkillGapChart.jsx
+│   │   │   │   ├── KeywordCloud.jsx
+│   │   │   │   └── ResumePreview.jsx
+│   │   │   ├── FileUploader/
+│   │   │   │   └── ResumeUpload.jsx
+│   │   │   └── common/
+│   │   │       ├── Header.jsx
+│   │   │       └── Footer.jsx
+│   │   ├── pages/
+│   │   │   ├── HomePage.jsx
+│   │   │   ├── AnalysisPage.jsx
+│   │   │   └── DashboardPage.jsx
+│   │   ├── assets/
+│   │   │   ├── styles/
+│   │   │   │   ├── main.css
+│   │   │   │   └── analysis.css
+│   │   │   └── images/
+│   │   ├── App.js
+│   │   └── index.js
+│   ├── package.json
+│   └── .env
+
+├── ai_components/
+│   ├── models/
+│   │   ├── skill_extractor/
+│   │   │   ├── train_model.py
+│   │   │   └── model_weights.pth
+│   │   └── formatting_detector/
+│   ├── data/
+│   │   ├── sample_resumes/
+│   │   └── training_data.csv
+│   └── utils/
+│       ├── preprocessors.py
+│       └── evaluation.py
+
+├── infrastructure/
+│   ├── Dockerfile
+│   ├── docker-compose.yml
+│   └── nginx/
+│       └── nginx.conf
+
+├── tests/
+│   ├── backend_tests/
+│   │   ├── test_parser.py
+│   │   └── test_analysis.py
+│   └── frontend_tests/
+│       └── component_tests/
+
+├── docs/
+│   ├── API_DOCS.md
+│   └── USER_GUIDE.md
+
+├── .gitignore
+├── README.md
+├── LICENSE
+└── requirements.txt
