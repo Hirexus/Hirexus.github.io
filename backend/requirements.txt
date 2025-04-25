@@ -1,0 +1,9 @@
+fastapi==0.75.2
+uvicorn==0.17.6
+python-multipart==0.0.5
+spacy==3.4.1
+pdfminer.six==20221105
+python-docx==0.8.11
+scikit-learn==1.0.2
+sentence-transformers==2.2.2
+sqlalchemy==1.4.36
