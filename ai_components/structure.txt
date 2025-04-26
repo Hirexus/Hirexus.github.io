@@ -1,0 +1,15 @@
+ai_components/
+├── models/
+│   ├── skill_extractor/
+│   │   ├── train_model.py
+│   │   └── model_weights.pth      # Trained model binary
+│   └── formatting_detector/
+│       └── train_model.py
+├── data/
+│   ├── sample_resumes/            # Add actual resume samples
+│   │   ├── resume1.pdf
+│   │   └── resume2.docx
+│   └── training_data.csv          # Annotated dataset
+└── utils/
+    ├── preprocessors.py
+    └── evaluation.py
