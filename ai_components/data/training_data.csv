@@ -1,0 +1,3 @@
+text,labels
+"Experienced Python developer with 5 years in web development","B-SKILL I-SKILL O O O B-SKILL"
+"Machine learning engineer proficient in TensorFlow","B-SKILL I-SKILL O B-SKILL"
