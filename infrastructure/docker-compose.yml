@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: infrastructure/Dockerfile
+    environment:
+      - DATABASE_URL=postgresql://user:pass@db:5432/resumeai
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - db
+      - redis
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: ../infrastructure/Dockerfile.frontend
+    ports:
+      - "3000:80"
+
+  nginx:
+    image: nginx:1.23-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ../frontend/build:/usr/share/nginx/html
+    depends_on:
+      - backend
+      - frontend
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: resumeai
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+
+volumes:
+  pgdata:
