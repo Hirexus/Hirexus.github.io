@@ -3,221 +3,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hirexus Pro | Enterprise Resume Optimization</title>
+    <title>Hirexus AI — Your On-Demand AI Employees</title>
+    <meta name="description" content="Hirexus AI provides instant, on-demand AI employees that execute tasks across sales, marketing, support, development, finance and more. Scale instantly, cut costs, and get results with outcome-based subscriptions.">
+    <meta name="theme-color" content="#0b1220">
+    <meta property="og:title" content="Hirexus AI — Your On-Demand AI Employees">
+    <meta property="og:description" content="Instant, full-role AI employees that integrate with your tools and scale as you grow.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://dummyimage.com/1200x630/0b1220/ffffff&text=Hirexus+AI">
+    <meta name="twitter:card" content="summary_large_image">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        :root {
-            --primary: #101828;
-            --secondary: #2563eb;
-            --accent: #7c3aed;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-        }
-        .gradient-text {
-            background: linear-gradient(45deg, var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
+        :root { --primary: #0b1220; --secondary: #2563eb; --accent: #7c3aed; }
+        body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+        .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); }
+        .gradient-text { background: linear-gradient(90deg, #60a5fa, #a78bfa); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .hero-gradient { background: radial-gradient(1200px 600px at 50% -20%, rgba(37,99,235,.35), transparent), radial-gradient(1000px 600px at 90% 10%, rgba(167,139,250,.25), transparent), radial-gradient(800px 400px at 10% 0%, rgba(56,189,248,.25), transparent); }
+        .section { scroll-margin-top: 100px; }
     </style>
 </head>
-<body class="bg-gray-50 text-[var(--primary)] antialiased">
+<body class="bg-[#070b13] text-white antialiased">
 
-<!-- Navbar -->
-<nav class="fixed w-full glass-panel z-50 border-b border-gray-200/80">
-    <div class="max-w-8xl mx-auto px-6 py-4">
-        <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-10">
-                <svg class="w-10 h-10 text-[var(--secondary)]" viewBox="0 0 48 48" fill="none">
-                    <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" fill="currentColor"/>
-                    <path d="M32 18L22 30L16 24" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                </svg>
-                <div class="hidden lg:flex space-x-8">
-                    <a href="#features" class="font-medium text-gray-600 hover:text-[var(--secondary)] transition-colors">Solutions</a>
-                    <a href="#analysis" class="font-medium text-gray-600 hover:text-[var(--secondary)] transition-colors">Analysis</a>
-                    <a href="#enterprise" class="font-medium text-gray-600 hover:text-[var(--secondary)] transition-colors">Enterprise</a>
+    <!-- Navbar -->
+    <nav class="fixed inset-x-0 top-0 z-50">
+        <div class="mx-auto max-w-7xl px-5">
+            <div class="mt-4 flex items-center justify-between rounded-2xl glass px-4 py-3">
+                <a href="#top" class="flex items-center space-x-3">
+                    <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10">
+                        <i class="fa-solid fa-robot text-sky-300"></i>
+                    </span>
+                    <span class="text-lg font-extrabold tracking-tight">Hirexus <span class="gradient-text">AI</span></span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8 text-sm text-white/80">
+                    <a href="#problem" class="hover:text-white">Problem</a>
+                    <a href="#solution" class="hover:text-white">Solution</a>
+                    <a href="#how" class="hover:text-white">How it Works</a>
+                    <a href="#differentiation" class="hover:text-white">Why Us</a>
+                    <a href="#gtm" class="hover:text-white">GTM</a>
+                    <a href="#market" class="hover:text-white">Market</a>
+                    <a href="#ask" class="hover:text-white">The Ask</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="#roles" class="rounded-xl px-4 py-2 text-sm font-semibold ring-1 ring-white/15 hover:bg-white/5">See Roles</a>
+                    <a href="mailto:founders@hirexus.ai?subject=Hirexus%20AI%20Demo" class="rounded-xl bg-white text-[#0b1220] px-4 py-2 text-sm font-bold hover:bg-white/90">Book a Demo</a>
+                </div>
+                <button id="menuBtn" class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl ring-1 ring-white/10">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden mx-auto max-w-7xl px-5 hidden">
+            <div class="mt-3 rounded-2xl glass p-3 text-sm text-white/80">
+                <div class="grid grid-cols-2 gap-2">
+                    <a href="#problem" class="rounded-lg px-3 py-2 hover:bg-white/5">Problem</a>
+                    <a href="#solution" class="rounded-lg px-3 py-2 hover:bg-white/5">Solution</a>
+                    <a href="#how" class="rounded-lg px-3 py-2 hover:bg-white/5">How it Works</a>
+                    <a href="#differentiation" class="rounded-lg px-3 py-2 hover:bg-white/5">Why Us</a>
+                    <a href="#gtm" class="rounded-lg px-3 py-2 hover:bg-white/5">GTM</a>
+                    <a href="#market" class="rounded-lg px-3 py-2 hover:bg-white/5">Market</a>
+                    <a href="#ask" class="rounded-lg px-3 py-2 hover:bg-white/5">The Ask</a>
+                </div>
+                <div class="mt-2 flex items-center space-x-2">
+                    <a href="#roles" class="flex-1 rounded-xl px-4 py-2 text-center font-semibold ring-1 ring-white/15 hover:bg-white/5">See Roles</a>
+                    <a href="mailto:founders@hirexus.ai?subject=Hirexus%20AI%20Demo" class="flex-1 rounded-xl bg-white text-[#0b1220] px-4 py-2 text-center font-bold hover:bg-white/90">Book a Demo</a>
                 </div>
             </div>
-            <a href="mailto:mejlaouibassam@gmail.com" class="bg-[var(--secondary)] text-white px-5 py-2 rounded-lg font-semibold shadow hover:bg-blue-700 transition">
-                Schedule Demo
-            </a>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- Hero Section -->
-<section class="pt-40 pb-32">
-    <div class="max-w-7xl mx-auto px-8 text-center">
-        <div class="mb-8" data-aos="fade-up">
-            <span class="inline-block px-4 py-2 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
-                Enterprise-Grade AI Platform
-            </span>
+    <!-- Hero -->
+    <header id="top" class="relative pt-36 pb-20 hero-gradient overflow-hidden">
+        <div class="absolute inset-0 -z-10 opacity-20" aria-hidden="true">
+            <div class="pointer-events-none absolute -left-40 -top-32 h-[36rem] w-[36rem] rounded-full bg-sky-400 blur-[120px]"></div>
+            <div class="pointer-events-none absolute -right-40 -top-24 h-[32rem] w-[32rem] rounded-full bg-violet-500 blur-[120px]"></div>
         </div>
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tighter" data-aos="fade-up">
-            Next-Generation<br>
-            <span class="gradient-text">Resume Optimization</span>
-        </h1>
-
-        <!-- Upload Area -->
-        <div class="max-w-2xl mx-auto mt-12" data-aos="fade-up">
-            <div onclick="document.getElementById('resumeInput').click()" class="border-2 border-dashed border-gray-300 rounded-2xl p-12 text-center cursor-pointer transition-all hover:border-[var(--secondary)] hover:bg-white">
-                <i class="fas fa-cloud-upload-alt text-4xl text-[var(--secondary)]"></i>
-                <div class="mt-6">
-                    <p class="text-xl font-semibold text-gray-900 mb-2">Secure Document Analysis</p>
-                    <p class="text-gray-600 text-sm">Supported formats: PDF, DOCX, TXT</p>
+        <div class="mx-auto max-w-7xl px-5">
+            <div class="grid items-center gap-10 md:grid-cols-12" data-aos="fade-up">
+                <div class="md:col-span-7">
+                    <span class="inline-flex items-center space-x-2 rounded-full bg-white/5 px-3 py-1 text-xs font-semibold ring-1 ring-white/10">
+                        <i class="fa-solid fa-bolt text-amber-300"></i>
+                        <span>Instant AI Workforce</span>
+                    </span>
+                    <h1 class="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight">
+                        Your On‑Demand <span class="gradient-text">AI Employees</span>
+                    </h1>
+                    <p class="mt-4 text-white/75 text-lg md:text-xl max-w-2xl">Deploy full‑role AI employees that plug into your tools, execute tasks across teams, and scale instantly — at a fraction of traditional hiring costs.</p>
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <a href="mailto:founders@hirexus.ai?subject=Hirexus%20AI%20Demo" class="rounded-xl bg-white text-[#0b1220] px-5 py-3 font-semibold shadow-sm hover:bg-white/95">Book a Demo</a>
+                        <a href="#how" class="rounded-xl px-5 py-3 font-semibold ring-1 ring-white/15 hover:bg-white/5">See How It Works</a>
+                    </div>
+                    <div class="mt-8 grid grid-cols-3 gap-5 text-sm text-white/70">
+                        <div class="rounded-xl bg-white/5 p-4 ring-1 ring-white/10"><div class="text-2xl font-extrabold text-white">80%↓</div><div>Cost vs. traditional hiring</div></div>
+                        <div class="rounded-xl bg-white/5 p-4 ring-1 ring-white/10"><div class="text-2xl font-extrabold text-white">Instant</div><div>Speed‑to‑hire</div></div>
+                        <div class="rounded-xl bg-white/5 p-4 ring-1 ring-white/10"><div class="text-2xl font-extrabold text-white">Outcome</div><div>Based subscription</div></div>
+                    </div>
                 </div>
-                <input type="file" id="resumeInput" class="hidden" accept=".pdf,.docx,.txt">
-            </div>
-            <div id="uploadStatus" class="hidden mt-6 text-gray-700 text-center">
-                <i class="fas fa-spinner fa-spin"></i>
-                <span class="ml-2">AI Analysis in Progress</span>
-            </div>
-        </div>
-
-        <!-- Buttons Section -->
-        <div class="flex justify-center space-x-4 mt-12" data-aos="fade-up">
-            <a href="mailto:mejlaouibassam@gmail.com" class="bg-white text-[var(--primary)] font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-gray-100 transition">
-                Schedule Demo
-            </a>
-            <a href="#features" class="bg-[var(--secondary)] text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-blue-600 transition">
-                Explore Features
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Features Section -->
-<section id="features" class="py-20 bg-gray-100">
-    <div class="max-w-7xl mx-auto px-8 text-center">
-        <h2 class="text-4xl font-bold text-gray-800 mb-12">Features That Set Us Apart</h2>
-        
-        <div class="grid md:grid-cols-3 gap-12">
-            <!-- Feature Card -->
-            <div class="transition transform hover:scale-105 hover:bg-gray-50 rounded-lg shadow-md p-8 bg-white">
-                <i class="fas fa-brain text-5xl text-[var(--secondary)] mb-6"></i>
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">AI Optimization</h3>
-                <p class="text-gray-600">Smart suggestions to tailor your resume to job descriptions and keywords.</p>
-            </div>
-
-            <div class="transition transform hover:scale-105 hover:bg-gray-50 rounded-lg shadow-md p-8 bg-white">
-                <i class="fas fa-chart-line text-5xl text-[var(--secondary)] mb-6"></i>
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Analytics Dashboard</h3>
-                <p class="text-gray-600">Deep insights into readability, keyword density, and ATS compliance.</p>
-            </div>
-
-            <div class="transition transform hover:scale-105 hover:bg-gray-50 rounded-lg shadow-md p-8 bg-white">
-                <i class="fas fa-file-invoice text-5xl text-[var(--secondary)] mb-6"></i>
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">1-Click Templates</h3>
-                <p class="text-gray-600">Professional templates that make your resume stand out with a single click.</p>
+                <div class="md:col-span-5">
+                    <div class="rounded-2xl glass p-5 ring-1 ring-white/10" data-aos="fade-left" data-aos-delay="100">
+                        <div class="rounded-xl bg-white/5 p-4 ring-1 ring-white/10">
+                            <div class="flex items-center justify-between text-xs text-white/70">
+                                <span>Live roles</span>
+                                <span class="inline-flex items-center rounded-full bg-emerald-500/15 px-2 py-0.5 text-emerald-300 ring-1 ring-emerald-500/30">Available</span>
+                            </div>
+                            <div id="roles" class="mt-3 grid grid-cols-2 gap-3 text-sm">
+                                <div class="rounded-lg bg-[#0c1423] p-3 ring-1 ring-white/10"><i class="fa-solid fa-chart-line text-sky-300"></i> Sales SDR</div>
+                                <div class="rounded-lg bg-[#0c1423] p-3 ring-1 ring-white/10"><i class="fa-solid fa-bullhorn text-sky-300"></i> Marketing Ops</div>
+                                <div class="rounded-lg bg-[#0c1423] p-3 ring-1 ring-white/10"><i class="fa-solid fa-headset text-sky-300"></i> Support Agent</div>
+                                <div class="rounded-lg bg-[#0c1423] p-3 ring-1 ring-white/10"><i class="fa-solid fa-code text-sky-300"></i> Dev Assistant</div>
+                                <div class="rounded-lg bg-[#0c1423] p-3 ring-1 ring-white/10"><i class="fa-solid fa-file-invoice-dollar text-sky-300"></i> Finance Ops</div>
+                                <div class="rounded-lg bg-[#0c1423] p-3 ring-1 ring-white/10"><i class="fa-solid fa-user-nurse text-sky-300"></i> Compliance</div>
+                            </div>
+                            <div class="mt-4 text-xs text-white/60">Plug & play with CRM, Slack, GitHub, Zendesk and more.</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </header>
 
-        <div class="grid md:grid-cols-3 gap-12 mt-8">
-            <!-- More Features -->
-            <div class="transition transform hover:scale-105 hover:bg-gray-50 rounded-lg shadow-md p-8 bg-white">
-                <i class="fas fa-search text-5xl text-[var(--secondary)] mb-6"></i>
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Personalized Job Recommendations</h3>
-                <p class="text-gray-600">Get job alerts tailored to your skills and career preferences.</p>
-            </div>
-
-            <div class="transition transform hover:scale-105 hover:bg-gray-50 rounded-lg shadow-md p-8 bg-white">
-                <i class="fas fa-chart-bar text-5xl text-[var(--secondary)] mb-6"></i>
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Real-time Job Market Trends</h3>
-                <p class="text-gray-600">Stay informed with up-to-date industry trends, salaries, and demand.</p>
-            </div>
-
-            <div class="transition transform hover:scale-105 hover:bg-gray-50 rounded-lg shadow-md p-8 bg-white">
-                <i class="fas fa-briefcase text-5xl text-[var(--secondary)] mb-6"></i>
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Skill Gap Analysis</h3>
-                <p class="text-gray-600">Identify missing skills and get recommendations on courses to fill them.</p>
+    <!-- Problem -->
+    <section id="problem" class="section py-20">
+        <div class="mx-auto max-w-7xl px-5">
+            <div class="grid gap-10 md:grid-cols-12 items-center" data-aos="fade-up">
+                <div class="md:col-span-6">
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Hiring is slow, expensive, and risky</h2>
+                    <p class="mt-4 text-white/75">Companies take 42 days and spend $20,000+ per hire on average — with mismatches that crush productivity. Startups lack resources; enterprises can’t scale across regions fast enough. Freelancers and agencies are fragmented and unreliable. Single‑task tools can’t cover full roles.</p>
+                </div>
+                <div class="md:col-span-6 grid grid-cols-2 gap-4">
+                    <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="text-4xl font-extrabold text-white">42</div><div class="mt-1 text-white/70">Days to fill a role</div></div>
+                    <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="text-4xl font-extrabold text-white">$20k+</div><div class="mt-1 text-white/70">Average per hire</div></div>
+                    <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="text-4xl font-extrabold text-white">Low</div><div class="mt-1 text-white/70">Predictability</div></div>
+                    <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="text-4xl font-extrabold text-white">High</div><div class="mt-1 text-white/70">Opportunity cost</div></div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-</section>
+    </section>
 
-<!-- Template Section -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-8 text-center">
-        <h2 class="text-4xl font-bold text-gray-800 mb-12">Choose Your Template</h2>
-        <div class="grid md:grid-cols-3 gap-12">
-            <!-- Template 1 -->
-            <div class="border p-8 rounded-lg">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Classic Elegance</h3>
-                <a href="#" class="text-[var(--secondary)]">Preview & Download</a>
+    <!-- Solution -->
+    <section id="solution" class="section py-20">
+        <div class="mx-auto max-w-7xl px-5">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Full‑role AI employees, on demand</h2>
+                <p class="mt-3 text-white/75">Automate 70–80% of routine tasks across Sales, Marketing, Support, Development, and Finance. Integrate with your stack, learn from your data, and scale instantly without payroll overhead.</p>
             </div>
-
-            <!-- Template 2 -->
-            <div class="border p-8 rounded-lg">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Modern Minimal</h3>
-                <a href="#" class="text-[var(--secondary)]">Preview & Download</a>
-            </div>
-
-            <!-- Template 3 -->
-            <div class="border p-8 rounded-lg">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Creative Tech</h3>
-                <a href="#" class="text-[var(--secondary)]">Preview & Download</a>
+            <div class="mt-10 grid gap-5 md:grid-cols-3" data-aos="fade-up" data-aos-delay="50">
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><i class="fa-solid fa-plug-circle-bolt text-sky-300"></i><h3 class="mt-3 font-bold">Seamless integrations</h3><p class="mt-2 text-white/70 text-sm">CRM, Slack, GitHub, Zendesk, finance and data warehouses.</p></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><i class="fa-solid fa-gears text-sky-300"></i><h3 class="mt-3 font-bold">Outcome‑based pricing</h3><p class="mt-2 text-white/70 text-sm">Pay for results, not seat licenses. Predictable unit economics.</p></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><i class="fa-solid fa-brain text-sky-300"></i><h3 class="mt-3 font-bold">Continuous learning</h3><p class="mt-2 text-white/70 text-sm">Adaptive models improve quality and efficiency over time.</p></div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Insights Section -->
-<section class="py-20 bg-gray-100">
-    <div class="max-w-7xl mx-auto px-8 text-center">
-        <h2 class="text-4xl font-bold text-gray-800 mb-12">Get Actionable Resume Insights</h2>
-        <div class="flex justify-center space-x-12">
-            <div class="space-y-4">
-                <h3 class="text-4xl font-bold text-[var(--secondary)]">85%</h3>
-                <p class="text-gray-600">ATS Compatibility</p>
+    <!-- How it Works -->
+    <section id="how" class="section py-20">
+        <div class="mx-auto max-w-7xl px-5">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">How Hirexus AI Works</h2>
             </div>
-            <div class="space-y-4">
-                <h3 class="text-4xl font-bold text-[var(--secondary)]">92%</h3>
-                <p class="text-gray-600">Readability</p>
-            </div>
-            <div class="space-y-4">
-                <h3 class="text-4xl font-bold text-[var(--secondary)]">78%</h3>
-                <p class="text-gray-600">Keyword Match</p>
+            <div class="mt-10 grid gap-5 md:grid-cols-5" data-aos="fade-up" data-aos-delay="50">
+                <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10"><div class="text-xs text-white/60">Step 1</div><div class="mt-1 font-bold">Sign up & define roles</div><p class="mt-2 text-sm text-white/70">Choose AI employees for your business needs.</p></div>
+                <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10"><div class="text-xs text-white/60">Step 2</div><div class="mt-1 font-bold">Integrate tools</div><p class="mt-2 text-sm text-white/70">Connect CRM, support, repos, docs, and workflows.</p></div>
+                <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10"><div class="text-xs text-white/60">Step 3</div><div class="mt-1 font-bold">Deploy instantly</div><p class="mt-2 text-sm text-white/70">AI employees start executing tasks immediately.</p></div>
+                <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10"><div class="text-xs text-white/60">Step 4</div><div class="mt-1 font-bold">Improve continuously</div><p class="mt-2 text-sm text-white/70">Learn and optimize from your data and feedback.</p></div>
+                <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10"><div class="text-xs text-white/60">Step 5</div><div class="mt-1 font-bold">Scale on demand</div><p class="mt-2 text-sm text-white/70">Add roles and capacity instantly as you grow.</p></div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Upload Section -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-8 text-center">
-        <h2 class="text-4xl font-bold text-gray-800 mb-8">Ready to Supercharge Your Resume?</h2>
-        <p class="text-lg text-gray-600 mb-6">Upload your resume now and get instant feedback with our AI-powered engine.</p>
-        <div class="flex justify-center">
-            <button class="bg-[var(--secondary)] text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:bg-blue-600 transition">
-                Upload Resume
-            </button>
+    <!-- Differentiation -->
+    <section id="differentiation" class="section py-20">
+        <div class="mx-auto max-w-7xl px-5" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-center">Why Hirexus AI is Different</h2>
+            <div class="mt-8 overflow-x-auto">
+                <table class="w-full min-w-[720px] text-sm">
+                    <thead class="text-left text-white/70">
+                        <tr>
+                            <th class="py-3 pr-6 font-semibold">Feature</th>
+                            <th class="py-3 pr-6 font-semibold">Recruitment Agencies</th>
+                            <th class="py-3 pr-6 font-semibold">Freelancers</th>
+                            <th class="py-3 pr-6 font-semibold">Other AI Tools</th>
+                            <th class="py-3 font-semibold">Hirexus AI</th>
+                        </tr>
+                    </thead>
+                    <tbody class="align-top">
+                        <tr class="border-t border-white/10">
+                            <td class="py-3 pr-6">Speed‑to‑hire</td>
+                            <td class="py-3 pr-6">1–3 months</td>
+                            <td class="py-3 pr-6">2–4 weeks</td>
+                            <td class="py-3 pr-6">Single‑task only</td>
+                            <td class="py-3 font-semibold text-emerald-300">Instant, full‑role deployment</td>
+                        </tr>
+                        <tr class="border-t border-white/10">
+                            <td class="py-3 pr-6">Cost</td>
+                            <td class="py-3 pr-6">$20k–$30k per hire</td>
+                            <td class="py-3 pr-6">Unpredictable</td>
+                            <td class="py-3 pr-6">Multiple licenses</td>
+                            <td class="py-3 font-semibold text-emerald-300">80% cheaper, single subscription</td>
+                        </tr>
+                        <tr class="border-t border-white/10">
+                            <td class="py-3 pr-6">Talent quality</td>
+                            <td class="py-3 pr-6">Dependent on pool</td>
+                            <td class="py-3 pr-6">Inconsistent</td>
+                            <td class="py-3 pr-6">Narrow scope</td>
+                            <td class="py-3 font-semibold text-emerald-300">Consistent, adaptive workforce</td>
+                        </tr>
+                        <tr class="border-t border-white/10">
+                            <td class="py-3 pr-6">Integration</td>
+                            <td class="py-3 pr-6">Manual, legacy</td>
+                            <td class="py-3 pr-6">Low collaboration</td>
+                            <td class="py-3 pr-6">Limited</td>
+                            <td class="py-3 font-semibold text-emerald-300">Plug & play with modern stacks</td>
+                        </tr>
+                        <tr class="border-t border-white/10">
+                            <td class="py-3 pr-6">Scalability</td>
+                            <td class="py-3 pr-6">Regional limits</td>
+                            <td class="py-3 pr-6">Human capacity</td>
+                            <td class="py-3 pr-6">One role at a time</td>
+                            <td class="py-3 font-semibold text-emerald-300">Infinite scale, multi‑role teams</td>
+                        </tr>
+                        <tr class="border-t border-white/10">
+                            <td class="py-3 pr-6">Defensibility</td>
+                            <td class="py-3 pr-6">None</td>
+                            <td class="py-3 pr-6">None</td>
+                            <td class="py-3 pr-6">Easy to copy</td>
+                            <td class="py-3 font-semibold text-emerald-300">Proprietary AI + data flywheel</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Footer -->
-<footer class="py-12 bg-gray-100 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-8 text-center text-gray-600">
-        <p>&copy; 2025 Hirexus Pro. All rights reserved.</p>
-    </div>
-</footer>
+    <!-- Why Now -->
+    <section id="why" class="section py-20">
+        <div class="mx-auto max-w-7xl px-5">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Why Now</h2>
+            </div>
+            <div class="mt-8 grid gap-5 md:grid-cols-3" data-aos="fade-up" data-aos-delay="50">
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><h3 class="font-bold">AI Revolution</h3><p class="mt-2 text-white/70 text-sm">2025 marks mainstream adoption of AI agents handling complex, multi‑role tasks.</p></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><h3 class="font-bold">Business Readiness</h3><p class="mt-2 text-white/70 text-sm">Workers already use AI daily — high acceptance for AI colleagues.</p></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><h3 class="font-bold">Talent & Costs</h3><p class="mt-2 text-white/70 text-sm">Acute shortages and rising costs create urgent demand for AI employees.</p></div>
+            </div>
+        </div>
+    </section>
 
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-    AOS.init();
-</script>
+    <!-- GTM Timeline -->
+    <section id="gtm" class="section py-20">
+        <div class="mx-auto max-w-7xl px-5" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-center">Go‑To‑Market Strategy</h2>
+            <div class="mt-10 grid gap-5 md:grid-cols-4">
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="text-white/60">2025 — Early Adoption</div><ul class="mt-2 list-disc pl-5 text-sm text-white/80"><li>Target tech startups and scale‑ups</li><li>Launch MVP; 5–10 pilot companies</li><li>Collect feedback and case studies</li></ul></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="text-white/60">2026 — Expansion</div><ul class="mt-2 list-disc pl-5 text-sm text-white/80"><li>Enter mid‑market enterprises</li><li>Launch self‑serve platform</li><li>Partner with accelerators & HR</li></ul></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="text-white/60">2027 — Enterprise Scale</div><ul class="mt-2 list-disc pl-5 text-sm text-white/80"><li>Onboard large enterprises</li><li>Introduce multi‑role AI teams</li><li>Global reseller partnerships</li></ul></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="text-white/60">2028 — Market Leadership</div><ul class="mt-2 list-disc pl-5 text-sm text-white/80"><li>Default AI workforce provider</li><li>Expand to LATAM, Europe, Asia</li><li>Network effects drive growth</li></ul></div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Market Opportunity -->
+    <section id="market" class="section py-20">
+        <div class="mx-auto max-w-7xl px-5">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Market Opportunity</h2>
+            </div>
+            <div class="mt-10 grid gap-5 md:grid-cols-3" data-aos="fade-up" data-aos-delay="50">
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 text-center"><div class="text-3xl font-extrabold">$6.7T</div><div class="mt-1 text-white/70">TAM — global knowledge worker spend</div></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 text-center"><div class="text-3xl font-extrabold">$650B</div><div class="mt-1 text-white/70">SAM — staffing & recruitment</div></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 text-center"><div class="text-3xl font-extrabold">$1–2B</div><div class="mt-1 text-white/70">SOM — initial SMB & SaaS startups by 2028</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Uses -->
+    <section id="customers" class="section py-20">
+        <div class="mx-auto max-w-7xl px-5" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-center">Who Uses Hirexus AI</h2>
+            <div class="mt-10 grid gap-5 md:grid-cols-3">
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="font-bold">Startups</div><p class="mt-2 text-sm text-white/70">Spin up teams instantly, validate faster, extend runway.</p></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="font-bold">SMBs/Companies</div><p class="mt-2 text-sm text-white/70">Reduce hiring costs, increase productivity and SLA reliability.</p></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="font-bold">Individuals</div><p class="mt-2 text-sm text-white/70">Automate repetitive work with specialized AI assistants.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Access Methods -->
+    <section id="access" class="section py-20">
+        <div class="mx-auto max-w-7xl px-5" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-center">Access Methods</h2>
+            <div class="mt-10 grid gap-5 md:grid-cols-3">
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 text-center"><i class="fa-solid fa-display text-sky-300"></i><div class="mt-2 font-bold">Desktop & Mobile</div><p class="mt-1 text-sm text-white/70">Web and mobile apps for instant deployment.</p></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 text-center"><i class="fa-solid fa-plug text-sky-300"></i><div class="mt-2 font-bold">API Integration</div><p class="mt-1 text-sm text-white/70">Connect to CRM, Slack, GitHub, Zendesk, and more.</p></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 text-center"><i class="fa-solid fa-shield-halved text-sky-300"></i><div class="mt-2 font-bold">Enterprise‑grade</div><p class="mt-1 text-sm text-white/70">Security, permissions, and auditability by design.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Ask & Support -->
+    <section id="ask" class="section py-20">
+        <div class="mx-auto max-w-7xl px-5">
+            <div class="grid gap-10 md:grid-cols-12" data-aos="fade-up">
+                <div class="md:col-span-6">
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">The Ask</h2>
+                    <p class="mt-3 text-white/75">We are seeking <span class="font-semibold">$2–3M pre‑seed</span> to build a robust MVP, hire core engineers and AI specialists, and assemble a GTM team to drive early customer acquisition. We aim to secure 5–10 pilot customers for validation and case studies.</p>
+                    <ul class="mt-4 list-disc pl-6 text-white/80 text-sm">
+                        <li>Build and demonstrate full capabilities</li>
+                        <li>Hire core engineering and AI team</li>
+                        <li>Stand up GTM motion</li>
+                        <li>Secure 5–10 pilots</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-6">
+                    <h3 class="font-bold">Strategic Support</h3>
+                    <ul class="mt-3 list-disc pl-6 text-white/80 text-sm">
+                        <li>Introductions to early adopters and pilot customers</li>
+                        <li>Partnerships with HR tech platforms and staffing agencies</li>
+                        <li>Mentorship on product, business model, and GTM</li>
+                    </ul>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <a href="mailto:founders@hirexus.ai?subject=Hirexus%20AI%20—%20Investor%20Intro" class="rounded-xl bg-white text-[#0b1220] px-5 py-3 font-semibold hover:bg-white/95">Invest or Partner</a>
+                        <a href="mailto:founders@hirexus.ai?subject=Hirexus%20Pilot%20Request" class="rounded-xl px-5 py-3 font-semibold ring-1 ring-white/15 hover:bg-white/5">Request a Pilot</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantage -->
+    <section id="advantage" class="section py-20">
+        <div class="mx-auto max-w-7xl px-5" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-center">Our Advantage</h2>
+            <div class="mt-10 grid gap-5 md:grid-cols-4">
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="font-bold">First‑mover</div><p class="mt-2 text-sm text-white/70">AI employees‑as‑a‑service with full‑role coverage.</p></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="font-bold">Deep problem insight</div><p class="mt-2 text-sm text-white/70">Built for startup & SMB pain points from day one.</p></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="font-bold">Proprietary flywheel</div><p class="mt-2 text-sm text-white/70">Models compound with data to drive moat over time.</p></div>
+                <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"><div class="font-bold">Lean & fast</div><p class="mt-2 text-sm text-white/70">Founder‑led team shipping at startup velocity.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision / Final CTA -->
+    <section id="vision" class="section py-24">
+        <div class="mx-auto max-w-4xl px-5 text-center" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">The future of work isn’t tools — it’s <span class="gradient-text">AI colleagues</span>.</h2>
+            <p class="mt-4 text-white/80">Hirexus AI enables businesses to scale teams instantly, reduce costs, and execute faster. Your AI employees, ready when you are.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+                <a href="mailto:founders@hirexus.ai?subject=Hirexus%20AI%20Demo" class="rounded-xl bg-white text-[#0b1220] px-5 py-3 font-semibold hover:bg-white/95">Book a Demo</a>
+                <a href="#roles" class="rounded-xl px-5 py-3 font-semibold ring-1 ring-white/15 hover:bg-white/5">Explore Roles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-10">
+        <div class="mx-auto max-w-7xl px-5">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-white/70">
+                <div class="flex items-center gap-2">
+                    <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10"><i class="fa-solid fa-robot text-sky-300"></i></span>
+                    <span class="font-semibold">Hirexus AI</span>
+                    <span>© 2025</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="mailto:founders@hirexus.ai" class="hover:text-white">Contact</a>
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
+        const btn = document.getElementById('menuBtn');
+        const menu = document.getElementById('mobileMenu');
+        btn && btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    </script>
 </body>
 </html>
